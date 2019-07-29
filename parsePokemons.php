@@ -8,7 +8,7 @@ $ids = [];
 
 //check for error
 if ($response->code == 200) {
-	echo "succesfull data retrieval!";
+	echo "succesfull data retrieval! <br>";
 	foreach($response->body as $pokemon) {
 		$i = 0;
 		foreach ($pokemon as $pokemonAttribute => $value) {
