@@ -1,11 +1,4 @@
 <?php
-//create arrays for different attributes
-$attacks = [];
-$defenses = [];
-$staminas = [];
-$names = [];
-$ids = [];
-
 //check for error
 if ($response->code == 200) {
 	echo "succesfull data retrieval! <br>";
@@ -14,19 +7,24 @@ if ($response->code == 200) {
 		foreach ($pokemon as $pokemonAttribute => $value) {
 			switch($pokemonAttribute){
 				case "base_attack":
-					$attacks[] = $value;
+					array_push($attacks, $value);
+					//$attacks[] = $value;
 					break;
 				case "base_defense":
-					$defenses[] = $value;
+					array_push($defenses, $value);
+					//$defenses[] = $value;
 					break;
 				case "base_stamina":
-				    $staminas[] = $value;
+					array_push($staminas, $value);
+				    //$staminas[] = $value;
 				    break;
 				case "pokemon_id":
-					$ids[] = $value;
+					array_push($names, $value);
+					//$ids[] = $value;
 					break;
 				case "pokemon_name":
-					$names[] = $value;
+					array_push($ids, $value);
+					//$names[] = $value;
 					break;
 			}
 			$i++;

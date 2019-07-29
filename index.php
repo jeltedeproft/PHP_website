@@ -10,12 +10,19 @@
     It connects to the pokemon go API, collects stats from different pokemon , puts them in an sql database and displays them on the screen <br> 
     The source code can be found on my github : https://github.com/jeltedeproft/PHP_website <br> ";
 
+  //initialize variables
+  $attacks = [];
+  $defenses = [];
+  $staminas = [];
+  $names = [];
+  $ids = [];
+
   //step 1 : collect pokemon go info
   include "pokemonAPI.php";
 
   //step 2 : parse this response into separate arrays, for easier import into SQL
   include "parsePokemons.php";
-  //print_r($response);
+  print_r($attacks);
 
   //step 3 connect to database
   include "database.php";
