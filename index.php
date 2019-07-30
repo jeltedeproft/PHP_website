@@ -22,7 +22,7 @@
 
   //step 2 : parse this response into separate arrays, for easier import into SQL
   include "parsePokemons.php";
-  print_r($attacks);
+  //print_r($attacks);
 
   //step 3 connect to database
   include "database.php";

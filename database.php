@@ -24,27 +24,25 @@ $columns = "`base_attack`,`base_defense`,`base_stamina`,`pokemon_name`,`pokemon_
 // insertArrayIntoSQL($staminas,$mysqli_connection,"base_stamina");
 // insertArrayIntoSQL($names,$mysqli_connection,"pokemon_id");
 // insertArrayIntoSQL($ids,$mysqli_connection,"pokemon_name");
-insertArraysSQLWithForLoop($mysqli_connection);
 
-function insertArraysSQLWithForLoop($connect){
-	for ($x = 0; $x <= sizeof($attacks); $x++) {
-		print_r($attacks);
-		echo "attacks[x] = $attacks[x] <br>";
-		$attack_power = mysqli_real_escape_string($connect,$attacks[x]);
-		$defense_power = mysqli_real_escape_string($connect,$defenses[x]);
-		$stamina = mysqli_real_escape_string($connect,$staminas[x]);
-		$name = mysqli_real_escape_string($connect,$names[x]);
-		$id = mysqli_real_escape_string($connect,$ids[x]);
-		$sql = "INSERT INTO `Pokemon`(`base_attack`, `base_defense`, 'base_stamina',`pokemon_name`, `pokemon_id`) VALUES ('".$attack_power."', '".$defense_power."', '".$stamina."', '".$name."', '".$id."')";
+for ($x = 0; $x <= sizeof($attacks); $x++) {
+	echo "attacks[1] = $attacks[1] <br>";
+	$attack_power = mysqli_real_escape_string($mysqli_connection,$attacks[$x]);
+	$defense_power = mysqli_real_escape_string($mysqli_connection,$defenses[$x]);
+	$stamina = mysqli_real_escape_string($mysqli_connection,$staminas[$x]);
+	$name = mysqli_real_escape_string($mysqli_connection,$names[$x]);
+	$id = mysqli_real_escape_string($mysqli_connection,$ids[$x]);
+	echo "attack power = $attack_power <br>";
+	$sql = "INSERT INTO `Pokemon`(`base_attack`, `base_defense`, 'base_stamina',`pokemon_id`, `pokemon_name`) VALUES ('".$attack_power."', '".$defense_power."', '".$stamina."', '".$name."', '".$id."')";
 
 		//EXECUTE
-		if (mysqli_query($connect, $sql)) {
-			echo "New record created successfully! <br>";
-		} else {
-			echo "Error: " . $sql . "" . mysqli_error($connect);
-		}
-	} 
-}
+	if (mysqli_query($mysqli_connection, $sql)) {
+		echo "New record created successfully! <br>";
+	} else {
+		echo "Error: " . $sql . "" . mysqli_error($mysqli_connection);
+	}
+} 
+
 
 function insertArrayIntoSQL($table,$connect,$columname){
 	foreach ($table as $key => $value) {
