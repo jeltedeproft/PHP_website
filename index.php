@@ -18,6 +18,11 @@
   <link rel="stylesheet" type="text/css" href="css/util.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <!--===============================================================================================-->
+  <style>
+  body {
+      background-color: #cccccc;
+  }
+  </style>
 </head>
 
 
@@ -27,7 +32,7 @@
 
   echo "To expand my application, I have created this website. <br>
   It connects to the pokemon go API, collects stats from different pokemon , puts them in an sql database and displays them on the screen <br>
-  The source code can be found on my github : https://github.com/jeltedeproft/PHP_website <br> ";
+  The source code can be found on my github : <a href= 'https://github.com/jeltedeproft/PHP_website'> My GitHub</a> <br> ";
 
   //initialize variables
   $attacks = [];
@@ -41,7 +46,6 @@
 
   //step 2 : parse this response into separate arrays, for easier import into SQL
   include "parsePokemons.php";
-  //print_r($attacks);
 
   //step 3 connect to database and inject information
   include "database.php";

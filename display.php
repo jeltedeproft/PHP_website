@@ -38,12 +38,12 @@ echo "<div class='table100 ver3 m-b-110'>
       <tbody>";
 
 while($row = $result->fetch_array (MYSQLI_NUM) ){   //Creates a loop to loop through results
-  echo "<tr><td>"
-  . $row['0'] . "</td><td>"
-  . $row['1'] . "</td><td>"
-  . $row['2'] . "</td><td>"
-  . $row['3'] . "</td><td>"
-  . $row['4'] .
+  echo "<tr class='row100 body'>
+  <td class='cell100 column1'>" . $row['0'] . "</td>
+  <td class='cell100 column2'>" . $row['1'] . "</td>
+  <td class='cell100 column3'>" . $row['2'] . "</td>
+  <td class='cell100 column4'>" . $row['3'] . "</td>
+  <td class='cell100 column5'>" . $row['4'] .
   "</td></tr>" ;  //$row['index'] the index here is a field name
 }
 
