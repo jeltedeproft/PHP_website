@@ -19,11 +19,11 @@ if ($response->code == 200) {
 				    //$staminas[] = $value;
 				    break;
 				case "pokemon_id":
-					array_push($names, $value);
+					array_push($ids, $value);
 					//$ids[] = $value;
 					break;
 				case "pokemon_name":
-					array_push($ids, $value);
+					array_push($names, $value);
 					//$names[] = $value;
 					break;
 			}
